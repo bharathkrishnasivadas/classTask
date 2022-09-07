@@ -1,0 +1,20 @@
+When JavaScript is executed inside the browser, the window object is the JavaScript Global object. The document object is a property of the window object.
+
+The window object represents the browser window.
+The document object represents the HTML document loaded in that window.
+
+The window object has many useful properties like the location object and the setTimeout function.
+
+Since the window object is the Global object, ergo, it is the end of all scope chains, you don’t have to explicitly specify it when accessing its properties…
+Instead of window.setTimeout, you can just write setTimeout
+Same goes with document… instead of window.document, you can just write document…
+
+When JavaScript is run in a browser all variables and functions you create are properties and methods of the window object.
+
+You can access but not change any of the properties and methods of the Global object and you can override them be defining a similarly named property or method on the window object but they are still two entirely separate objects.
+
+window is a property of the Global object when you run JavaScript in a web browser.
+
+The Global Object is the keeper of all of the functions and variables which were not defined inside of other functions and objects. Surprisingly, the Global Object does not have an explicit name in the language. Sometimes the this variable points at it, but often not. In the web browsers, window and self are members of the Global Object which point to the Global Object, thus giving an indirect way of addressing it.
+If a variable is accessed, but is not found in the current scope, it is looked for in the Global Object. If it is not found there, an error will result.
+The ECMAScript specification does not talk about the possibility of multiple Global Objects, or contexts, but browsers support this. Each window has its own Global Object.
